@@ -1,13 +1,5 @@
-/**
- * Counts the number of odd integers in the inclusive range between low and high.
- *
- * @param {number} low - The lower bound of the range.
- * @param {number} high - The upper bound of the range.
- * @returns {number} - The count of odd integers in the range.
- * @throws {Error} - Throws an error for invalid inputs.
- */
 function countOdds(low, high) {
-  // Validate input
+  // Validating input
   if (!Number.isInteger(low) || !Number.isInteger(high) || low > high) {
     throw new Error(
       "Invalid input. Please provide valid integer values with low <= high."
@@ -21,14 +13,16 @@ function countOdds(low, high) {
       oddNumbers.push(num);
     }
   }
-  console.log(oddNumbers);
   return oddNumbers.length;
 }
 
-// Example usage:
+// Test cases:
 try {
-  const result = countOdds(3, 7);
-  console.log("Count of Odd Numbers:", result);
+  console.log("Count of Odd Numbers:", countOdds(3, 7));
+  console.log("Count of Odd Numbers:", countOdds(1, 7));
+  console.log("Count of Odd Numbers:", countOdds(3, 6));
+  console.log("Count of Odd Numbers:", countOdds(3, "7")); // error : Please provide valid integer values with low <= high
+  console.log("Count of Odd Numbers:", countOdds(4, 2)); // error : Please provide valid integer values with low <= high
 } catch (error) {
   console.error(error.message);
 }
